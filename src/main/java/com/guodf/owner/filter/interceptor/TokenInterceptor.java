@@ -68,7 +68,7 @@ public class TokenInterceptor implements HandlerInterceptor {
             return true;
         }
         //2:header中拿token
-        String token = request.getHeader("token");
+        String token = request.getParameter("token");
         if (StringUtils.isBlank(token)) {
             // 没有从request中拿
             token = request.getParameter("token");
@@ -92,6 +92,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         }else{
             return false;
         }
+
     }
 
     //
